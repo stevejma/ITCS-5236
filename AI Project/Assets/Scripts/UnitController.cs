@@ -4,13 +4,51 @@ using UnityEngine;
 
 public class UnitController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private Vector3 targetPosition;
+    private Vector3 lookAtTarget;
+
+    private Quaternion playerRotate;
+    private float rotateSpeed = 2;
+    private float speed = 5;
+
+    void Start () {
+
+
+    }
 	
-	// Update is called once per frame
 	void Update () {
-		
-	}
+        // On mouse click unit turns and looks at target
+        if (Input.GetMouseButton(0)) {
+            SetTargetPosition();
+        }
+
+        // Unit also moves to target position
+        Move();
+    }
+
+    void SetTargetPosition() {
+
+        // Raycast to mouse click position
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1000)) {
+            targetPosition = hit.point;
+
+            // Unit orients itself so that it rotates itself along the x and z plane but does not unnaturally look up on the y plane
+            lookAtTarget = new Vector3(targetPosition.x - transform.position.x,
+                transform.position.y,
+                targetPosition.z - transform.position.z);
+            playerRotate = Quaternion.LookRotation(lookAtTarget);
+        }
+    }
+
+    void Move() {
+
+        // Adds rotation speed so that unit does not immediately face the mouse click position
+        transform.rotation = Quaternion.Slerp(transform.rotation, playerRotate, rotateSpeed * Time.deltaTime);
+
+        // Unit moves towards the target position
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
 }
