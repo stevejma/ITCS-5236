@@ -9,8 +9,8 @@ public class UnitController : MonoBehaviour {
 
     private Quaternion playerRotate;
 
-    private float rotateSpeed = 1f;
-    private float speed = 5f;
+    [SerializeField] private float rotateSpeed = 1f;
+    [SerializeField] private float speed = 5f;
     private float radiusOfSat = 2f;
 
     private bool isMoving = false;
