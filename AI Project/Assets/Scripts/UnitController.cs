@@ -22,7 +22,7 @@ public class UnitController : MonoBehaviour {
     void Update() {
 
         // On mouse click unit turns and looks at target
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(1)) {
             SetTargetPosition();
         }
 

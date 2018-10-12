@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\UnitController.cs" />
+    <Compile Include="Assets\Scripts\UnitSelect.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Users/steve/Documents/GitHub/ITCS-5236/AI Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

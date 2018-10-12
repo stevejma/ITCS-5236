@@ -8,6 +8,7 @@ TagManager:
   - Scout
   - Sniper
   - Medic
+  - Unit
   layers:
   - Default
   - TransparentFX
