@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 50101733}
   - component: {fileID: 50101736}
   - component: {fileID: 50101737}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tank
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 269255067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Units
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 294050456}
   - component: {fileID: 294050459}
   - component: {fileID: 294050460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Medic
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 539578683}
   - component: {fileID: 539578682}
   - component: {fileID: 539578681}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 821278542}
   - component: {fileID: 821278541}
   - component: {fileID: 821278540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 974994257}
   - component: {fileID: 974994261}
   - component: {fileID: 974994260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sniper
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 1213331702}
   - component: {fileID: 1213331701}
   - component: {fileID: 1213331700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 1356293590}
   - component: {fileID: 1356293589}
   - component: {fileID: 1356293588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,7 +1751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871888355}
   - component: {fileID: 1871888356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UnitController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1804,7 @@ GameObject:
   - component: {fileID: 1998735158}
   - component: {fileID: 1998735161}
   - component: {fileID: 1998735162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scout
   m_TagString: Unit
   m_Icon: {fileID: 0}
