@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitController : MonoBehaviour {
+public class AIController : MonoBehaviour {
 
 	private Vector3 targetPosition;
 	private Vector3 lookAtTarget;
@@ -12,7 +12,7 @@ public class UnitController : MonoBehaviour {
 	[SerializeField] private float rotateSpeed = 1f;
 	[SerializeField] private float speed = 5f;
 	private float radiusOfSat = 2f;
-
+	public GameObject target;
 	private bool isMoving = false;
 
 	void Start () {
@@ -20,13 +20,16 @@ public class UnitController : MonoBehaviour {
 	}
 
 	void Update() {
+                 target = GameObject.Find("Scout");
 
 		// On mouse click unit turns and looks at target
-		if (Input.GetMouseButton(1)) {
-			SetTargetPosition();
-		}
+//		if (Input.GetMouseButton(1)) {
+//			SetTargetPosition();
+//		}
 
-		if (Input.GetMouseButtonDown(0)) {
+
+//		if (Input.GetMouseButtonDown(0)) {
+		if(Vector3.Distance(target.transform.position, this.transform.position) < 6) {
 			ShootGun();
 		}
 
@@ -39,20 +42,19 @@ public class UnitController : MonoBehaviour {
 	}
 
 	void ShootGun() {
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, 1000)) {
+	
 
 
 			GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			go.transform.position = this.transform.position;
 			go.layer = gameObject.layer;
 			Rigidbody rb = go.AddComponent<Rigidbody>();
-			Vector3 v3T = hit.point;
+			Vector3 v3T = target.transform.position;
+			
+					
 			
 			go.transform.LookAt(v3T);
 			rb.AddRelativeForce(Vector3.forward*3000);
-		}
 		
 	}
 
