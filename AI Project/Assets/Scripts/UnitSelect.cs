@@ -21,7 +21,11 @@ public class UnitSelect : MonoBehaviour {
         unit2Mov = unit2.GetComponent<UnitController>();
         unit3Mov = unit3.GetComponent<UnitController>();
         unit4Mov = unit4.GetComponent<UnitController>();
-
+	
+	unit1Mov.enabled = false;
+	unit2Mov.enabled = false;
+	unit3Mov.enabled = false;
+	unit4Mov.enabled = false;
     }
 	
 	// Update is called once per frame
