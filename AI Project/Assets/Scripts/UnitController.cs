@@ -9,12 +9,16 @@ public class UnitController : MonoBehaviour {
 
 	private Quaternion playerRotate;
 
+	private GUIStyle guiStyle = new GUIStyle();
+
 	[SerializeField] private float rotateSpeed = 1f;
 	[SerializeField] private float speed = 5f;
 	private float radiusOfSat = 2f;
 
 	private bool isMoving = false;
 
+	bool displayMessage;
+	string message = "You Won! You're Great!";
 	void Start () {
 
 	}
@@ -35,7 +39,17 @@ public class UnitController : MonoBehaviour {
 		if (isMoving) {
 			Move();
 		}
+	
+	}
 
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.name == "FlagB") {
+			other.transform.parent = this.transform;
+		}
+
+		if(other.gameObject.name == "FlagR") {
+			displayMessage = true;
+		}
 	}
 
 	void ShootGun() {
@@ -77,6 +91,13 @@ public class UnitController : MonoBehaviour {
 
 	}
 
+	void OnGUI() {
+
+		guiStyle.fontSize = 72;
+		if(displayMessage) {
+			GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), message);
+		}
+	}
 	void Move() {
 
 		Vector3 towards = targetPosition - transform.position;
